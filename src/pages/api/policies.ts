@@ -11,6 +11,7 @@ export type Policy = {
   benefit: string;
   period: string;
   category: string;
+  detailUrl?: string;
 };
 
 const SERVICE_KEY = process.env.GOV_API_SERVICE_KEY;
@@ -49,6 +50,7 @@ async function fetchPoliciesFromGovAPI(): Promise<Policy[]> {
     benefit: item["서비스목적요약"] || "지원 내용 정보 없음",
     period: item["신청기한"] || "상시 또는 별도 공고",
     category: item["지원유형"] || "기타",
+    detailUrl: item["상세조회URL"] || "",
   }));
 
   return mapped;

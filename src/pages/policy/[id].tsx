@@ -89,9 +89,20 @@ const PolicyDetail = () => {
 
             {/* 추후: 상세조회URL 같은 필드가 생기면 여기 버튼 추가 */}
             <div className="policy-detail-footer">
-              <p className="detail-note">
-                실제 신청은 각 기관의 공식 홈페이지 또는 정부24/보조금24에서 진행해야 합니다.
-              </p>
+             {policy.detailUrl && (
+    <a
+      href={policy.detailUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="detail-button"
+    >
+      공식 상세보기 / 신청 바로가기
+    </a>
+  )}
+
+  <p className="detail-note">
+    실제 신청은 각 기관의 공식 홈페이지 또는 정부24/보조금24에서 진행됩니다.
+  </p>
             </div>
           </article>
         )}
