@@ -1,0 +1,362 @@
+/* 글로벌 리셋 & 기본 폰트 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI",
+    sans-serif;
+  background: #0f172a; /* 다크 네이비 배경 */
+  color: #0f172a;
+}
+
+/* 전체 페이지 래퍼 */
+.page {
+  min-height: 100vh;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 40px;
+}
+
+/* 히어로 영역 */
+.hero {
+  background: radial-gradient(circle at top left, #2563eb33, #0f172a 55%, #020617);
+  border-radius: 24px;
+  padding: 32px 28px;
+  color: #f9fafb;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.7);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero-button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #f9fafb;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.5);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.6);
+}
+
+.hero-button:disabled {
+  opacity: 0.7;
+  cursor: default;
+  box-shadow: none;
+}
+
+.hero-hint {
+  font-size: 0.8rem;
+  color: #cbd5f5;
+}
+
+/* 필터 바 */
+.filter-bar {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: #020617cc;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 64, 175, 0.6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #cbd5f5;
+}
+
+.filter-select {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid #1e3a8a;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.filter-select:focus {
+  border-color: #60a5fa;
+}
+
+.filter-input {
+  padding: 6px 9px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.filter-input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+/* 상태 메시지 */
+.status-area {
+  margin-top: 12px;
+}
+
+.status-error {
+  font-size: 0.85rem;
+  color: #fecaca;
+  background: rgba(153, 27, 27, 0.3);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.status-hint {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  opacity: 0.85;
+}
+
+/* 정책 카드 리스트 영역 */
+.policy-list {
+  margin-top: 14px;
+}
+
+/* 개별 정책 카드 */
+.policy-card {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.policy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.policy-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #020617;
+}
+
+.policy-badge {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.policy-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.policy-dot {
+  opacity: 0.5;
+}
+
+.policy-benefit {
+  margin: 0 0 4px;
+  font-size: 0.86rem;
+  color: #111827;
+}
+
+.policy-target,
+.policy-period {
+  margin: 2px 0;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.policy-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  margin-right: 4px;
+}
+
+/* 푸터 */
+.footer {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* 반응형 */
+@media (max-width: 640px) {
+  .page {
+    padding: 20px 12px 28px;
+  }
+
+  .hero {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .policy-card {
+    border-radius: 16px;
+    padding: 12px 13px;
+  }
+}
+
+/* 상세 페이지 레이아웃 */
+.policy-detail {
+  margin-top: 16px;
+}
+
+.policy-detail-top {
+  margin-bottom: 10px;
+}
+
+.back-link {
+  font-size: 0.8rem;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* 상세 카드 */
+.policy-detail-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.policy-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.policy-detail-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.policy-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.policy-detail-section {
+  margin-bottom: 12px;
+}
+
+.policy-detail-section h2 {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.policy-detail-section p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.policy-detail-footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.detail-note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+/* 카드 전체를 링크로 감싸기 위한 스타일 */
+.policy-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
